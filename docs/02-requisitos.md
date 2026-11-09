@@ -49,6 +49,8 @@ antes da aprovação.
 | RNF-09 | Um sensor pode ser substituído por outro do mesmo modelo sem reprogramação. | desejável | proposto | — |
 | RNF-10 | Documentação de montagem e configuração escrita para usuário sem experiência em eletrônica. | desejável | proposto | — |
 | RNF-11 | O painel é acessível por navegador em computador e celular. | essencial | proposto | — |
+| RNF-12 | Todo componente ligado à rede elétrica é bivolt (100–240 V, 50/60 Hz). Os testes da versão 1 são feitos em 220 V. | essencial | proposto | — |
+| RNF-13 | O custo total dos componentes novos da versão 1 (hub, nós para 2 ambientes, sensores, dispositivos de acionamento) não ultrapassa R$ 2.000. | essencial | proposto | — |
 
 ## Situações possíveis
 

@@ -2,7 +2,7 @@
 
 **Data:** 2026-11-09
 **Etapa:** 1
-**Situação:** proposta (pergunta 6 do levantamento não foi respondida; esta é a recomendação)
+**Situação:** aceita (pelo responsável, em 2026-11-09)
 
 ## Contexto
 

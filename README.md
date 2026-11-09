@@ -1,6 +1,7 @@
-# indoor-grow
+# greenhub
 
-Sistema de hardware + software para gerenciamento de cultivo de plantas indoor.
+Sistema de hardware + software para gerenciamento de cultivo de plantas indoor:
+monitoramento e controle de temperatura e umidade em um ou vários ambientes.
 
 O projeto é desenvolvido **etapa por etapa**. Nenhuma etapa é considerada concluída
 sem verificação e teste documentados. O processo está descrito em
@@ -10,8 +11,8 @@ sem verificação e teste documentados. O processo está descrito em
 
 | Etapa | Nome | Situação |
 |-------|------|----------|
-| 0 | Fundação do repositório e processo de trabalho | em andamento (falta publicar no remoto e aprovar) |
-| 1 | Requisitos e escopo (o que o sistema deve fazer) | em andamento (requisitos propostos, aguardando aprovação) |
+| 0 | Fundação do repositório e processo de trabalho | em andamento (falta aprovação final) |
+| 1 | Requisitos e escopo (o que o sistema deve fazer) | em andamento (falta aprovar requisitos e verificar equipamentos) |
 | 2 | Arquitetura e escolha de componentes | não iniciada |
 | 3+ | Ver [`docs/01-roadmap.md`](docs/01-roadmap.md) | não iniciada |
 

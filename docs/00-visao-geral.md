@@ -17,10 +17,11 @@ sistema mantém o ambiente dentro deles e registra o que aconteceu.
 | 1 | Tamanho e tipo do espaço | Produto para tendas de cultivo de cannabis, de 0,60 m × 0,60 m até salas e galpões. Deve controlar mais de um ambiente ao mesmo tempo. |
 | 2 | Plantas e método | Não é determinante. Foco em medições, parametrização e resultados. |
 | 3 | Grandezas essenciais | Temperatura e umidade do ar. As demais são desejáveis. |
-| 4 | Atuadores existentes | Luz Master Plants 240 W com ajuste manual de intensidade. Exaustor Vivosun com controlador E42. Tensões de alimentação ainda não confirmadas (ver `hardware/equipamentos-existentes.md`). |
+| 4 | Atuadores existentes | Luz Master Plants Quantum Bar 240 W PRO-MASTER (bivolt, dimmer integrado de tipo não informado). Exaustor Vivosun AeroZesh T6 150 mm (110–240 V, 35 W, motor EC/PWM) com controlador GrowHub E42. Detalhes em `hardware/equipamentos-existentes.md`. |
 | 5 | Experiência com eletrônica | Nenhuma. O projeto precisa ser modular: módulos prontos, sem solda. |
-| 6 | Onde o software roda | Não respondido. Proposta registrada na decisão `0003`. |
-| 7 | Orçamento | Não respondido. Ver "Perguntas em aberto". |
+| 6 | Onde o software roda | Hub local + nós por ambiente. Decisão `0003` aceita. |
+| 7 | Orçamento | R$ 2.000 para a versão 1. |
+| 8 | Rede elétrica | Testes em 220 V. O produto deve ser bivolt (127 V / 220 V). |
 
 ## Escopo da versão 1
 
@@ -47,8 +48,9 @@ sistema mantém o ambiente dentro deles e registra o que aconteceu.
 | O sistema gerencia de 1 a vários ambientes a partir de um único ponto de controle. | confirmada pela resposta 1 |
 | O usuário final não faz solda nem fiação em tensão de rede. Toda montagem é por conectores e módulos prontos. | confirmada pela resposta 5 |
 | Cargas em tensão de rede (luz, exaustor, umidificador) são acionadas por dispositivos certificados, nunca por relé "nu" montado pelo usuário. | derivada da resposta 5; ver decisão `0002` |
-| Operação em rede local sem depender de internet; acesso remoto é camada opcional. | proposta; ver decisão `0003` |
-| Alimentação pela rede elétrica, sem bateria. | mantida |
+| Operação em rede local sem depender de internet; acesso remoto é camada opcional. | confirmada; decisão `0003` aceita |
+| Alimentação pela rede elétrica, bivolt, sem bateria. | confirmada |
+| Orçamento da versão 1: R$ 2.000, incluindo hub, nós para 2 ambientes, sensores e dispositivos de acionamento. Os equipamentos já existentes (luz e exaustor) não entram nesse valor. | confirmada; detalhamento na BOM da Etapa 2 |
 | Versão 1 é um protótipo funcional no ambiente do responsável; certificação e embalagem de produto ficam para depois. | proposta, a confirmar |
 
 ## Fora de escopo da versão 1
@@ -60,11 +62,8 @@ sistema mantém o ambiente dentro deles e registra o que aconteceu.
 
 ## Perguntas em aberto
 
-1. **Orçamento** para a versão 1 (protótipo com 1 ou 2 ambientes). Sem esse número,
-   a Etapa 2 vai trabalhar com uma faixa estimada e apresentar opções.
-2. **Onde o software roda**: confirmar ou alterar a proposta da decisão `0003`.
-3. **Quantos ambientes** a versão 1 deve controlar de fato no teste (sugestão: 2, para
-   validar o multiambiente sem multiplicar custo).
-4. **Tensão da rede** no local (127 V ou 220 V) e modelo exato do exaustor e do driver da
-   luz. Ver checklist em `hardware/equipamentos-existentes.md`.
-5. A versão 1 é para uso próprio ou já será instalada em cultivo de terceiros?
+1. **Quantos ambientes** a versão 1 deve controlar de fato no teste. Premissa adotada:
+   2, para validar o multiambiente sem multiplicar custo. Confirmar.
+2. **Tipo do dimmer** da luz e **modelo exato** do controlador Vivosun. Checklist e fotos
+   pedidas em `hardware/equipamentos-existentes.md`.
+3. A versão 1 é para uso próprio ou já será instalada em cultivo de terceiros?

@@ -18,3 +18,8 @@ Registro das mudanças por etapa. Formato: data, etapa, resumo.
 - Decisão 0002: hardware modular, sem solda e sem fiação de rede pelo usuário.
 - Decisão 0003: arquitetura hub local + nós por ambiente (proposta).
 - Checklist de verificação dos equipamentos existentes em `hardware/equipamentos-existentes.md`.
+- Projeto renomeado para `greenhub` e publicado em github.com/cuidedoseumei/greenhub.
+- Decisão 0003 aceita; orçamento de R$ 2.000 registrado (RNF-13); exigência bivolt com
+  testes em 220 V (RNF-12).
+- Especificações da luz (Quantum Bar 240 W PRO-MASTER) e do exaustor (AeroZesh T6 +
+  GrowHub E42) levantadas nas páginas dos fabricantes e registradas com a origem de cada dado.

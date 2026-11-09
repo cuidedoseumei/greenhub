@@ -24,7 +24,7 @@ qualquer decisão técnica.
 - [x] Estrutura de pastas criada e descrita no `README.md`.
 - [x] `PROCESSO.md` escrito.
 - [x] Modelos de decisão e de teste disponíveis.
-- [ ] Repositório publicado em um remoto (GitHub ou equivalente).
+- [x] Repositório publicado em https://github.com/cuidedoseumei/greenhub.
 - [ ] Revisado e aprovado pelo responsável do projeto.
 
 ---
@@ -44,13 +44,15 @@ em requisitos numerados em `02-requisitos.md`.
 
 **Critérios de aceite**
 - [x] Perguntas 1 a 5 respondidas e registradas em `00-visao-geral.md`.
-- [ ] Perguntas 6 (onde o software roda) e 7 (orçamento) respondidas, ou proposta da
-      decisão `0003` aceita.
+- [x] Perguntas 6 (onde o software roda) e 7 (orçamento) respondidas: decisão `0003`
+      aceita; orçamento R$ 2.000.
 - [x] Requisitos numerados (RF-xx funcionais, RNF-xx não funcionais) em `02-requisitos.md`.
 - [x] Cada requisito marcado como `essencial` ou `desejável`.
+- [x] Especificações da luz e do exaustor levantadas nas páginas dos fabricantes.
 - [ ] Requisitos revisados e marcados como `aprovado` pelo responsável.
-- [ ] Decisões `0002` e `0003` aceitas.
-- [ ] Checklist de `hardware/equipamentos-existentes.md` preenchido com fotos das etiquetas.
+- [ ] Decisão `0002` aceita.
+- [ ] Etiquetas dos equipamentos conferidas (fotos) e teste de queda de energia do E42
+      registrado em `testes/`.
 
 ---
 
@@ -157,7 +159,7 @@ Itens que surgiram fora do escopo da etapa atual e precisam ser avaliados.
 | # | Descrição | Origem | Destino proposto |
 |---|-----------|--------|------------------|
 | 1 | Definir licença do projeto | Etapa 0 | decisão futura |
-| 2 | Publicar repositório no GitHub (token da sessão inválido) | Etapa 0 | Etapa 0 |
-| 3 | Verificar se o E42 mantém configuração após queda de energia (define viabilidade da opção I2) | Etapa 1 | Etapa 2 |
-| 4 | Verificar tipo de dimerização do driver da luz (define RF-15) | Etapa 1 | Etapa 2 |
+| 2 | ~~Publicar repositório no GitHub~~ (feito: cuidedoseumei/greenhub) | Etapa 0 | concluída |
+| 3 | Verificar se o E42 mantém configuração após queda de energia. Decisivo: o E42 é alimentado pelo exaustor, então a opção I2 desliga os dois. | Etapa 1 | teste pelo responsável |
+| 4 | Verificar tipo de dimerização do driver da luz (define RF-15). Página do fabricante não informa; perguntar ao SAC ou fotografar. | Etapa 1 | responsável |
 | 5 | Produto para terceiros exigirá certificação e documentação de instalação; avaliar quando a versão 1 estiver validada | Etapa 1 | versão futura |
