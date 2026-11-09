@@ -2,56 +2,69 @@
 
 ## Objetivo
 
-Construir um sistema de hardware e software que monitore e controle o ambiente de um
-cultivo de plantas indoor, de forma confiável e verificável, permitindo ao cultivador
-acompanhar as condições e automatizar rotinas.
+Construir um **produto** de hardware + software que monitore e controle o ambiente de
+cultivos indoor, de forma confiável e verificável. O sistema deve atender desde uma
+tenda pequena (0,60 m × 0,60 m) até salas e galpões, e deve gerenciar **mais de um
+ambiente simultaneamente**.
 
-## O que o sistema deve cobrir (visão inicial, a refinar na Etapa 1)
+O foco é em medição, parametrização e resultado: o cultivador define os alvos, o
+sistema mantém o ambiente dentro deles e registra o que aconteceu.
 
-### Monitoramento (leitura de sensores)
-- Temperatura e umidade do ar.
-- Umidade do solo / substrato.
-- Luminosidade.
-- Possíveis extensões: CO₂, pH e condutividade elétrica (EC) de solução nutritiva,
-  temperatura da água, nível de reservatório.
+## Respostas do levantamento (Etapa 1, 2026-11-09)
 
-### Controle (atuadores)
-- Iluminação (liga/desliga e, possivelmente, intensidade).
-- Ventilação / exaustão.
-- Irrigação (bomba ou válvula).
-- Possíveis extensões: aquecedor, umidificador, desumidificador.
+| # | Pergunta | Resposta |
+|---|----------|----------|
+| 1 | Tamanho e tipo do espaço | Produto para tendas de cultivo de cannabis, de 0,60 m × 0,60 m até salas e galpões. Deve controlar mais de um ambiente ao mesmo tempo. |
+| 2 | Plantas e método | Não é determinante. Foco em medições, parametrização e resultados. |
+| 3 | Grandezas essenciais | Temperatura e umidade do ar. As demais são desejáveis. |
+| 4 | Atuadores existentes | Luz Master Plants 240 W com ajuste manual de intensidade. Exaustor Vivosun com controlador E42. Tensões de alimentação ainda não confirmadas (ver `hardware/equipamentos-existentes.md`). |
+| 5 | Experiência com eletrônica | Nenhuma. O projeto precisa ser modular: módulos prontos, sem solda. |
+| 6 | Onde o software roda | Não respondido. Proposta registrada na decisão `0003`. |
+| 7 | Orçamento | Não respondido. Ver "Perguntas em aberto". |
+
+## Escopo da versão 1
+
+### Monitoramento
+- Temperatura e umidade relativa do ar, por ambiente (**essencial**).
+- Déficit de pressão de vapor (VPD) calculado a partir de temperatura e umidade (**essencial**, só software).
+- Extensões desejáveis: temperatura de folha, CO₂, umidade de substrato, luminosidade,
+  pH / EC de solução.
+
+### Controle
+- Exaustão por limites de temperatura e umidade (**essencial**).
+- Iluminação por fotoperíodo (**essencial**).
+- Extensões desejáveis: umidificador, desumidificador, aquecedor, intensidade da luz.
 
 ### Software
-- Registro histórico das leituras.
-- Visualização (painel) local e/ou remota.
-- Regras de automação (horários, limites, ciclos de fotoperíodo).
-- Alertas quando algo sai do esperado.
+- Vários ambientes, cada um com seus sensores, atuadores e alvos.
+- Histórico de leituras e de acionamentos.
+- Painel com leituras atuais, gráficos e alertas.
 
-## Premissas iniciais
+## Premissas revisadas
 
-Estas premissas ainda **não foram validadas** e serão confirmadas ou revistas na Etapa 1.
+| Premissa | Situação |
+|----------|----------|
+| O sistema gerencia de 1 a vários ambientes a partir de um único ponto de controle. | confirmada pela resposta 1 |
+| O usuário final não faz solda nem fiação em tensão de rede. Toda montagem é por conectores e módulos prontos. | confirmada pela resposta 5 |
+| Cargas em tensão de rede (luz, exaustor, umidificador) são acionadas por dispositivos certificados, nunca por relé "nu" montado pelo usuário. | derivada da resposta 5; ver decisão `0002` |
+| Operação em rede local sem depender de internet; acesso remoto é camada opcional. | proposta; ver decisão `0003` |
+| Alimentação pela rede elétrica, sem bateria. | mantida |
+| Versão 1 é um protótipo funcional no ambiente do responsável; certificação e embalagem de produto ficam para depois. | proposta, a confirmar |
 
-- Um único ambiente de cultivo (uma tenda ou estante) na primeira versão.
-- Operação em rede local; acesso remoto é extensão futura.
-- O cultivador tem acesso físico ao equipamento para manutenção.
-- Alimentação pela rede elétrica, sem bateria na primeira versão.
+## Fora de escopo da versão 1
 
-## Fora de escopo (por enquanto)
-
-- Múltiplos ambientes gerenciados pelo mesmo controlador.
-- Aplicativo móvel nativo.
-- Integração com plataformas de terceiros.
+- Aplicativo móvel nativo (painel web responsivo cobre o uso pelo celular).
+- Certificação do produto (INMETRO/Anatel) para venda.
+- Controle de irrigação e de solução nutritiva.
+- Integração com o app da Vivosun ou de outros fabricantes.
 
 ## Perguntas em aberto
 
-As respostas definem a Etapa 1 e serão registradas em `02-requisitos.md`.
-
-1. Qual o tamanho e tipo do espaço de cultivo (tenda, armário, estante, sala)?
-2. Quais plantas e qual método (solo, hidroponia, coco)?
-3. Quais grandezas são essenciais e quais são desejáveis?
-4. Quais atuadores já existem (lâmpadas, exaustor, bomba) e qual sua alimentação
-   (127 V / 220 V, 12 V, 24 V)?
-5. Nível de experiência com eletrônica e solda: isso define se o hardware será com
-   módulos prontos ou placa dedicada.
-6. Onde o software vai rodar (no próprio controlador, em um computador local, em nuvem)?
-7. Orçamento aproximado para a primeira versão.
+1. **Orçamento** para a versão 1 (protótipo com 1 ou 2 ambientes). Sem esse número,
+   a Etapa 2 vai trabalhar com uma faixa estimada e apresentar opções.
+2. **Onde o software roda**: confirmar ou alterar a proposta da decisão `0003`.
+3. **Quantos ambientes** a versão 1 deve controlar de fato no teste (sugestão: 2, para
+   validar o multiambiente sem multiplicar custo).
+4. **Tensão da rede** no local (127 V ou 220 V) e modelo exato do exaustor e do driver da
+   luz. Ver checklist em `hardware/equipamentos-existentes.md`.
+5. A versão 1 é para uso próprio ou já será instalada em cultivo de terceiros?

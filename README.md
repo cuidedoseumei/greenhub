@@ -10,8 +10,8 @@ sem verificação e teste documentados. O processo está descrito em
 
 | Etapa | Nome | Situação |
 |-------|------|----------|
-| 0 | Fundação do repositório e processo de trabalho | em andamento |
-| 1 | Requisitos e escopo (o que o sistema deve fazer) | não iniciada |
+| 0 | Fundação do repositório e processo de trabalho | em andamento (falta publicar no remoto e aprovar) |
+| 1 | Requisitos e escopo (o que o sistema deve fazer) | em andamento (requisitos propostos, aguardando aprovação) |
 | 2 | Arquitetura e escolha de componentes | não iniciada |
 | 3+ | Ver [`docs/01-roadmap.md`](docs/01-roadmap.md) | não iniciada |
 
@@ -27,7 +27,7 @@ sem verificação e teste documentados. O processo está descrito em
 │   ├── 01-roadmap.md       # etapas planejadas com critérios de aceite
 │   ├── 02-requisitos.md    # requisitos funcionais e não funcionais
 │   └── decisoes/           # registros de decisão (ADR), um arquivo por decisão
-├── hardware/          # esquemáticos, lista de materiais (BOM), PCB, mecânica
+├── hardware/          # equipamentos existentes, diagrama de blocos, BOM, mecânica
 ├── firmware/          # código embarcado do controlador
 ├── software/          # backend, interface e integrações
 └── testes/            # planos e registros de teste de cada etapa

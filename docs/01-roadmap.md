@@ -31,7 +31,7 @@ qualquer decisão técnica.
 
 ## Etapa 1 — Requisitos e escopo
 
-**Situação:** não iniciada
+**Situação:** em andamento
 
 **Objetivo:** responder as perguntas em aberto de `00-visao-geral.md` e transformá-las
 em requisitos numerados em `02-requisitos.md`.
@@ -43,9 +43,14 @@ em requisitos numerados em `02-requisitos.md`.
 - Definição do que é essencial na versão 1 e do que fica para depois.
 
 **Critérios de aceite**
-- [ ] Todas as perguntas em aberto respondidas.
-- [ ] Requisitos numerados (RF-xx funcionais, RNF-xx não funcionais) em `02-requisitos.md`.
-- [ ] Cada requisito marcado como `essencial` ou `desejável`.
+- [x] Perguntas 1 a 5 respondidas e registradas em `00-visao-geral.md`.
+- [ ] Perguntas 6 (onde o software roda) e 7 (orçamento) respondidas, ou proposta da
+      decisão `0003` aceita.
+- [x] Requisitos numerados (RF-xx funcionais, RNF-xx não funcionais) em `02-requisitos.md`.
+- [x] Cada requisito marcado como `essencial` ou `desejável`.
+- [ ] Requisitos revisados e marcados como `aprovado` pelo responsável.
+- [ ] Decisões `0002` e `0003` aceitas.
+- [ ] Checklist de `hardware/equipamentos-existentes.md` preenchido com fotos das etiquetas.
 
 ---
 
@@ -53,21 +58,27 @@ em requisitos numerados em `02-requisitos.md`.
 
 **Situação:** não iniciada
 
-**Objetivo:** definir a arquitetura geral (controlador, sensores, atuadores, software)
-e escolher os componentes principais, com registro de decisão para cada escolha.
+**Objetivo:** definir a arquitetura "hub + nós" (decisão `0003`) e escolher os
+componentes principais dentro da restrição de montagem sem solda (decisão `0002`),
+com registro de decisão para cada escolha.
 
 **Escopo**
-- Diagrama de blocos do sistema.
-- Escolha do microcontrolador / computador de placa única.
-- Escolha de cada sensor e de cada módulo de acionamento.
-- Escolha da pilha de software (linguagens, banco de dados, interface).
-- Lista de materiais (BOM) preliminar com custo estimado.
+- Diagrama de blocos: hub, nós por ambiente, sensores, dispositivos de acionamento.
+- Escolha do controlador do nó e do padrão de conector dos módulos.
+- Escolha do sensor de temperatura e umidade.
+- Escolha do dispositivo certificado de acionamento de cargas de rede, com controle local.
+- Escolha do hub (hardware) e da pilha de software (linguagens, banco de dados, painel).
+- Protocolo de comunicação nó ↔ hub.
+- Definição da integração com o exaustor Vivosun (opções I1 a I4 em
+  `hardware/equipamentos-existentes.md`).
+- Lista de materiais (BOM) preliminar com custo estimado para 2 ambientes.
 
 **Critérios de aceite**
 - [ ] Diagrama de blocos em `hardware/`.
-- [ ] Um registro de decisão para cada componente principal.
-- [ ] BOM preliminar em `hardware/bom.md`.
+- [ ] Um registro de decisão para cada componente principal e para o protocolo nó ↔ hub.
+- [ ] BOM preliminar em `hardware/bom.md`, com fornecedor no Brasil quando possível.
 - [ ] Orçamento estimado dentro do definido na Etapa 1.
+- [ ] Nenhum item da BOM exige solda ou fiação de rede pelo usuário.
 
 ---
 
@@ -145,5 +156,8 @@ Itens que surgiram fora do escopo da etapa atual e precisam ser avaliados.
 
 | # | Descrição | Origem | Destino proposto |
 |---|-----------|--------|------------------|
-| 1 | Definir licença do projeto | Etapa 0 | decisão `0002` |
+| 1 | Definir licença do projeto | Etapa 0 | decisão futura |
 | 2 | Publicar repositório no GitHub (token da sessão inválido) | Etapa 0 | Etapa 0 |
+| 3 | Verificar se o E42 mantém configuração após queda de energia (define viabilidade da opção I2) | Etapa 1 | Etapa 2 |
+| 4 | Verificar tipo de dimerização do driver da luz (define RF-15) | Etapa 1 | Etapa 2 |
+| 5 | Produto para terceiros exigirá certificação e documentação de instalação; avaliar quando a versão 1 estiver validada | Etapa 1 | versão futura |
