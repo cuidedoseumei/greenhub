@@ -1,0 +1,38 @@
+# Sistema operacional / editores
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Firmware (PlatformIO / Arduino / ESP-IDF — ajustar na Etapa 2)
+.pio/
+build/
+*.bin
+*.elf
+*.hex
+*.map
+
+# Software (ajustar na Etapa 2)
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+.env
+.env.*
+!.env.example
+
+# Hardware (arquivos temporários de EDA — ajustar na Etapa 2)
+*-backups/
+*.kicad_prl
+*.kicad_pcb-bak
+*.sch-bak
+fp-info-cache
+_autosave-*
+
+# Logs e dados brutos de teste grandes
+*.log
+testes/evidencias/**/*.csv.gz
